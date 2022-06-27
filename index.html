@@ -9,10 +9,50 @@
     			// init Branch
     			branch.init('key_live_lfH0R3MSShYCfkGMXBEw4opmFAecbbnU');
  			</script>
+		
+<meta charset="utf-8" />
+<script>
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+}
+</script>
+
+<script>
+function DetectAndServe(){
+    let os = getMobileOperatingSystem();
+    if (os == "Android") {
+        window.location.href = "https://play.google.com/store/apps/details?id=in.paperwrk.openacademyapp"; 
+    } else if (os == "iOS") {
+        window.location.href = "https://apps.apple.com/us/app/branch-monster-factory/id917737838";
+    } else if (os == "Windows Phone") {
+        window.location.href = "https://www.microsoft.com/en-in/store/apps/windows-phone";
+    } else {
+        window.location.href = "http://www.google.com";
+    }
+}
+</script>
 	</head>
-	<body>
-		<h1>Hello World</h1>
-		<h2>I am Nitin Kaul, Integration engineer with Branch Metrics</h2>
-		<p>This is a test webpage. Let's code!</p>
+	<body onload="DetectAndServe()">
+		<h1>Hello Developers</h1>
+		<h2>Welcome to the most basic webpage!</h2>
+		<p>Want to download our Android app, click the button below</p>
 	</body>
 </html>
+
+
