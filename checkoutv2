@@ -1,0 +1,9 @@
+<!doctype html>
+<html>
+  <head>
+    npm install @adyen/adyen-web --save
+  </head>
+  <body>
+  Welcome to checkoutv2 by Nitin Kaul
+  </body>
+</html>
